@@ -31,6 +31,7 @@
 * End the request-response cycle
 * data validation and security on the server
 * next() keyword is optional, don't need to include it your function isn't going to use it
+* If the current middleware function does not end the request-response cycle, it must call next() to pass control to the next middleware function. Otherwise, the request will be left hanging.
 * Types of middleware
   * Application-level middleware
     * .get (All HTTP Methods)
@@ -40,7 +41,8 @@
     * (err, req, res, next)
     * the 404 at the bottom of express
   * Built-in middleware
-
+    * only serve-static
+    * serve files from within a given root directory
   * Third-party middleware  
     * cookieParser expamle
     * so many middles ware
